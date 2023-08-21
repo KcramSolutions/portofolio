@@ -20,6 +20,7 @@
     opacity: .9;
     z-index: 2;
 }
+
 .kcs-project-main::after{
     content: "";
     display: block;
@@ -39,22 +40,20 @@
     text-transform: uppercase;
 }
 
-.kcs-overlay{
-    position: fixed;
-    top: 0;
-    left: 0;
-    height: 100vh;
-    width:  100vw;
-    overflow: hidden;
-    z-index: 100;
-    background: rgba(0,0,0,.7);
-}
 
-.kcs-loading-container{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    color: white;
-    text-align: center;
+
+@media (max-width: 700px){
+    .kcs-project-main::before{
+        display: none;
+    }
+
+    .kcs-project-title-div{
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        left: 2rem;
+        z-index: 10;
+        color: white;
+        text-transform: uppercase;
+    }
 }

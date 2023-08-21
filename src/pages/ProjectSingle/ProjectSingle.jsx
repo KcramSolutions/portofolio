@@ -64,10 +64,10 @@ export function ProjectSingle({ }) {
 					<h2>Descripci&oacute;n</h2>
 					<div dangerouslySetInnerHTML={{ __html: project.data.content.rendered }} />
 					<Row>
-						{project.data.video != null ? (<Col>
+						{project.data.video != null ? (<Col sm="12" xl="6">
 							<h3 className='mt-4'>V&iacute;deo</h3>
 							<Ratio aspectRatio="16x9" className='mb-4'>
-								<embed type={project.data.video.mime_type} src={project.data.video.source_url}></embed>
+								<video controls type={project.data.video.mime_type} src={project.data.video.source_url} allowFullScreen ></video>
 							</Ratio>
 						</Col>) : (<></>)}
 
