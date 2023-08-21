@@ -2,8 +2,19 @@
     position: relative;
     display: block;
     height: fit-content;
-    margin-bottom: 3rem;
-    transform: translateX(20%);
+    margin: 3rem auto;
+    transform: translateX(50%);
+
+}
+.kcs-k{
+    display: block;
+    height: 5rem;
+    width: 1.3rem;
+    z-index: -1;
+    background: black;
+    position: relative;
+    left: -8pt;
+    top: .3rem;
 }
 .kcs-loader::after{
     content: "";

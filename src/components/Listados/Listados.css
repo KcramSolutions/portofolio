@@ -1,0 +1,12 @@
+.kcs-card{
+    transition: all .4s;
+    cursor: pointer;
+}
+
+.kcs-card:hover{
+    transform: translateY(-1rem);
+}
+
+.kcs-listado{
+    min-height: 65vh;
+}

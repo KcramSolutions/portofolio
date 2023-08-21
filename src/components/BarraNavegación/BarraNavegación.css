@@ -1,0 +1,184 @@
+.kcs-navbar{
+    min-height: 50pt;
+    position: sticky;
+    background-color: #efefef;
+    display: flex;
+    align-items: center;
+    padding: 10pt 20pt;
+    margin-top: 30pt;
+}
+.kcs-navbar > div {
+    margin-right: 10pt;
+}
+
+.kcs-navbar .kcs-logo img{
+    max-height: 100%;
+    height: 20pt;
+}
+.kcs-return{
+    position: absolute;
+    top: -30pt;
+    height: 30pt;
+    background-color: #121212;
+    width: 100%;
+    left: 0;
+    text-align: left;
+}
+.kcs-return a{
+    display: block;
+    background: #ffc00e;
+    position: absolute;
+    width: 20pt;
+    height: 2.5pt;
+    transform: translate(0, -50%);
+    top: 50%;
+    left: 23pt;
+    text-decoration: none;
+}
+
+.kcs-return a::before{
+    content: "<";
+    color: #ffc00e;
+    font-weight: 600;
+    font-size: 2rem;
+    position: absolute;
+    transform: translate(0, -50%);
+    top: -1.134pt;
+    left: -4pt;
+}
+
+.kcs-return a:hover::after{
+    content: "";
+    display: block;
+    height: 30pt;
+    width: 40pt;
+    background-color: #ffc00eaf;
+    position: absolute;
+    left: -10pt;
+    top: -14pt
+}
+
+.kcs-back{
+    position: absolute;
+    right: 2rem;
+}
+
+.kcs-back a{
+    color: #ffc00e;
+    text-decoration: none;
+    text-transform: uppercase;
+    transition: all .5s;
+    padding: .5rem 2rem;
+    display: inline-block;
+    font-weight: bold;
+}
+
+.kcs-back:hover a{
+    color: black;
+}
+
+.kcs-back:hover a::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    z-index: -1;
+    display: block;
+    width: 100%;
+    height: 2rem;
+    background: #ffc00e;
+    animation: underline .6s linear 0s 1 normal forwards;
+}
+
+.kcs-nav-link{
+    color: #ffc00e;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: all .5s;
+    position: relative;
+    display: inline-block;
+    padding: 20pt .5rem
+}
+
+.kcs-nav-link:hover::before{
+    content: "";
+    display: block;
+    height: 1rem;
+    width: .4rem;
+    background: #ffc00e;
+    position: absolute;
+    left: 0;
+    top: 45%;
+    transform: translateY(-50%);
+    clip-path: polygon(50% 0, 100% 0, 50% 50%, 100% 100%, 50% 100%, 0 50%);
+    animation: openL .5s 1 linear forwards;
+}
+
+.kcs-nav-link:hover::after{
+    content: "";
+    display: block;
+    height: 1rem;
+    width: .4rem;
+    background: #ffc00e;
+    position: absolute;
+    right: 0;
+    top: 56%;
+    transform: translateY(-50%);
+    clip-path: polygon(0% 0, 50% 0,100% 50%, 50% 100%, 0% 100%, 50% 50%);
+    animation: openR .5s 1 linear forwards;
+}
+.kcs-nav-link:hover{
+    color:black;
+}
+
+@keyframes openL {
+    0%{
+        left: 50%;
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    100%{
+        left: 0;
+    }
+}
+
+@keyframes openR {
+    0%{
+        right: 50%;
+        opacity: 0;
+    }
+    30%{
+        opacity: 1;
+    }
+    100%{
+        right: 0;
+    }
+}
+
+@keyframes underline {
+    0%{
+        height: 2pt;
+        top: 1.5rem;
+    }
+    10%{
+        height: 10pt;
+        top: 1.2rem;
+    }
+    40%{
+        height: 20pt;
+        top: 1rem;
+    }
+    60%{
+        height: 2.2rem;
+        top: .5rem;
+        clip-path: polygon(0% 0, 100% 0, 100% 50%, 100% 100%, 0% 100%, 0 50%);
+
+    }
+    100%{
+        top: 2pt;
+        clip-path: polygon(10% 0, 100% 0, 90% 50%, 100% 100%, 10% 100%, 0 50%);
+    }
+}

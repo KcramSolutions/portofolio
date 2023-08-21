@@ -1,22 +1,26 @@
+import React, { useEffect } from 'react';
+import { Provider, useDispatch, useSelector } from 'react-redux';
 import './App.css';
+import { BrowserRouter, Route, Routes, } from 'react-router-dom';
+import { saludo } from '../../store/slices/hellowSlice';
+import { Listados } from '../Listados/Listados';
+import { loadMessage } from '../../store/sagas/helloSaga';
+import { Main } from '../../pages/Main/Main';
+import { ProjectSingle } from '../../pages/ProjectSingle/ProjectSingle';
 
 function App() {
+
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Listo el proyecto está en marcha
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <BrowserRouter>
+        <Routes>
+          <Route path='/' Component={Main} />
+          <Route path='/:id' Component={ProjectSingle} />
+        </Routes>
+      </BrowserRouter>
+
+    </>
   );
 }
 

@@ -1,0 +1,19 @@
+.kcs-overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width:  100vw;
+    overflow: hidden;
+    z-index: 100;
+    background: rgba(0,0,0,.7);
+}
+
+.kcs-loading-container{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+}

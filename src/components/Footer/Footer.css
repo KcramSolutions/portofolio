@@ -1,0 +1,34 @@
+
+.kcs-footer::after{
+    content: "2023 © KCRAM SOLUTIONS S.I.";
+    text-align: center;
+    font-size: 8pt;
+    padding-top: .5rem;
+    font-weight: bold;
+    color: black;
+    display: block;
+    width: 100%;
+    height: 2rem;
+    background-color: #FDEDD1;
+    position: absolute;
+    left: 0;
+    bottom: 0pt;
+}
+
+.kcs-footer{
+    font-size: 10pt;
+    position: relative;
+    margin-top: 2rem;
+}
+
+
+.kcs-footer::before{
+    content: "";
+    display: block;
+    width: 100%;
+    height: 1rem;
+    background: #ffc00e;
+    position: absolute;
+    left: 0;
+    bottom: -1rem;
+}
