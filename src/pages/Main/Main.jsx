@@ -14,7 +14,7 @@ export function Main({ }) {
     const dispatch = useDispatch();
     useEffect(() => {
         dispatch({ type: RUN_MAIN_WINDOW });
-    }, [])
+    }, [dispatch])
     if (mainData.loading)
         return (
             <>
@@ -56,7 +56,11 @@ export function Main({ }) {
         )
     } else if (mainData.projects.length === 0) {
         return (
+            <>
+            <BarraNavegación />
             <EmptyList />
+            <Footer></Footer>
+            </>
         )
 
     } else {

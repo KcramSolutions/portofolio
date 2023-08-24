@@ -5,9 +5,10 @@ const proyectoSlice = createSlice({
     name: 'project',
     initialState: {
         data: [],
-        loading: true,
+        loading: false,
         error: false,
-        hasError: false
+        hasError: false,
+        loadEnd: false
     },
     reducers: {
         fetchProyectStart: (state) => {
@@ -21,6 +22,7 @@ const proyectoSlice = createSlice({
             state.loading = false;
             state.error = null;
             state.hasError = false;
+            state.loadEnd = true;
 
           },
           fetchProjectsFailure: (state, action) => {

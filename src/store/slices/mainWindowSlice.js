@@ -8,7 +8,7 @@ const mainWindowInfo = createSlice({
         headers: [],
         techs: [],
         errors: [],
-        loading: true,
+        loading: false,
         loadingMessage: "Esperando respuesta",
     },
     reducers: {

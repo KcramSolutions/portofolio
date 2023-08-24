@@ -4,8 +4,7 @@ import { Col, Container, Row } from 'react-bootstrap';
 import literals from '../../utils/literals';
 
  export function EmptyList({}){
-	 return (<div>
-		Hola
+	 return (<div className='kcs-mt'>
 		<Container>
 		<Row xs={12} md={12} lg={12}>
 			<Col >

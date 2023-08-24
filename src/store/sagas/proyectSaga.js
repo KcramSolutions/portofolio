@@ -1,4 +1,4 @@
-import { call, fork, put, takeLatest } from "redux-saga/effects"
+import { call, fork, put, select, takeEvery } from "redux-saga/effects"
 import { fetchProjectsFailure, fetchProjectsSuccess, fetchProyectStart } from "../slices/proyectoSlice"
 import urlJoin from "url-join";
 import constants from "../../utils/constants";
@@ -15,6 +15,9 @@ async function getProjects() {
 // creamos un funcion de procesado: realiza acciones mietnras actualiza el store
 export function* fetchProjects(action) {
     try {
+        const loading = yield select(state => state.project);
+        // console.log(loading)
+        if(loading.loading) return;
         yield put(fetchProyectStart());
         const response = yield call(ProyectoCaller.getOne, action.payload);
         if (response.failed == true) {
@@ -56,7 +59,7 @@ export function* fetchProjects(action) {
 
 // asignamos un identificador en el store al action
 function* watchFetchProjectsfn() {
-    yield takeLatest(FETCH_PROJECT, fetchProjects);
+    yield takeEvery(FETCH_PROJECT, fetchProjects);
 }
 
 export const proyectSaga = [fork(watchFetchProjectsfn)];
